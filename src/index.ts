@@ -4,10 +4,12 @@ import Part from './part';
 import Manager from './manager';
 import Sine from './instruments/sine';
 import Sawtooth from './instruments/sawtooth';
+import Triangle from './instruments/triangle';
+import Square from './instruments/square';
 import {amplitude, bit} from './constants';
 
 var manager = new Manager([
-  new Part(new Sine(), "")
+  new Part(new Square(), "")
 ]);
 
 manager.start((() => {

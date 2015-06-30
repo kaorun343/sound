@@ -21,8 +21,4 @@ export default class Sawtooth implements Instrument {
     }
     return this.wave.next();
   }
-
-  reset() {
-    this.time = 0;
-  }
 }

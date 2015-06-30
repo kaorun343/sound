@@ -20,12 +20,16 @@
         "./src/index.ts",
         "./src/instruments/sawtooth.ts",
         "./src/instruments/sine.ts",
+        "./src/instruments/square.ts",
+        "./src/instruments/triangle.ts",
         "./src/manager.ts",
         "./src/part.ts",
         "./src/typings/instrument.d.ts",
         "./src/typings/wave.d.ts",
-        "./src/waves/sawtoothwave.ts",
-        "./src/waves/sinewave.ts",
+        "./src/waves/sawtooth.ts",
+        "./src/waves/sine.ts",
+        "./src/waves/square.ts",
+        "./src/waves/triangle.ts",
         "./typings/bundle.d.ts",
         "./typings/node/node.d.ts"
     ]
