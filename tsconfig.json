@@ -18,11 +18,13 @@
     "files": [
         "./src/constants.ts",
         "./src/index.ts",
+        "./src/instruments/sawtooth.ts",
         "./src/instruments/sine.ts",
         "./src/manager.ts",
         "./src/part.ts",
         "./src/typings/instrument.d.ts",
         "./src/typings/wave.d.ts",
+        "./src/waves/sawtoothwave.ts",
         "./src/waves/sinewave.ts",
         "./typings/bundle.d.ts",
         "./typings/node/node.d.ts"

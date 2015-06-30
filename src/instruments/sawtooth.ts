@@ -1,13 +1,12 @@
 /// <reference path="../typings/instrument.d.ts"/>
 
-import SineWave from '../waves/sinewave';
+import SawtoothWave from '../waves/sawtoothwave';
 import {sampling} from '../constants';
 
-export default class Sine implements Instrument {
-
-  private wave = new SineWave(440);
+export default class Sawtooth implements Instrument {
+  private wave = new SawtoothWave(440);
   private time = 0;
-  private max: number;
+  private max : number;
   public done = false;
   private length = 1;
 
@@ -16,7 +15,7 @@ export default class Sine implements Instrument {
   }
 
   next() {
-    this.time ++;
+    this.time++;
     if (this.time > this.max) {
       this.done = true;
     }

@@ -13,12 +13,13 @@ export default class Manager {
   }
 
   start(callback: (num: number) => void) {
+    var length = this.parts.length;
     while (this.parts.length > 0) {
       callback(
         Math.round(
           this.parts
             .map(part => part.next())
-            .reduce((s, n) => s + n)
+            .reduce((s, n) => s + n) / length
         )
       );
       this.parts = this.parts.filter(part => !part.done());

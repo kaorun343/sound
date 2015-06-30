@@ -3,11 +3,17 @@
 import Part from './part';
 import Manager from './manager';
 import Sine from './instruments/sine';
+import Sawtooth from './instruments/sawtooth';
+import {amplitude, bit} from './constants';
 
 var manager = new Manager([
-  new Part(new Sine(1), "")
+  new Part(new Sine(), "")
 ]);
 
-manager.start((s: number) => {
-  console.log(s);
-});
+manager.start((() => {
+  if (bit > 8) {
+    return s => { console.log(s)};
+  } else {
+    return s => { console.log(s + amplitude)};
+  }
+})());
