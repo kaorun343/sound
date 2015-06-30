@@ -1,6 +1,6 @@
 /// <reference path="../typings/instrument.d.ts"/>
 
-import SawtoothWave from '../waves/sawtoothwave';
+import SawtoothWave from '../waves/sawtooth';
 import {sampling} from '../constants';
 
 export default class Sawtooth implements Instrument {

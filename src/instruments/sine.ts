@@ -1,6 +1,6 @@
 /// <reference path="../typings/instrument.d.ts"/>
 
-import SineWave from '../waves/sinewave';
+import SineWave from '../waves/sine';
 import {sampling} from '../constants';
 
 export default class Sine implements Instrument {
