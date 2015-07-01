@@ -4,7 +4,7 @@ import {sampling} from '../constants';
 export default class SawtoothWave implements Wave {
   private time: number = -1;
 
-  constructor(private frequency: number) {
+  constructor(public frequency: number) {
 
   }
 
@@ -14,9 +14,5 @@ export default class SawtoothWave implements Wave {
       this.time = 0;
     }
     return 1 - (2 * this.frequency * this.time / sampling);
-  }
-
-  reset() {
-    this.time = -1;
   }
 }

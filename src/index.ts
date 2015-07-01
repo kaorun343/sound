@@ -1,5 +1,3 @@
-/// <reference path="../typings/bundle.d.ts"/>
-"use stricts";
 import Part from './part';
 import Manager from './manager';
 import Sine from './instruments/sine';
@@ -9,7 +7,7 @@ import Square from './instruments/square';
 import {amplitude, bit} from './constants';
 
 var manager = new Manager([
-  new Part(new Square(), "")
+  new Part(new Triangle(), "l8cdefedcrefgagfer")
 ]);
 
 manager.start((() => {

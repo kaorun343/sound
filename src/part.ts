@@ -1,22 +1,26 @@
 /// <reference path="./typings/instrument.d.ts"/>
 /// <reference path="../typings/bundle.d.ts"/>
 
+import Score from './score';
 import {amplitude} from './constants';
-import fs = require('fs');
 
 export default class Part {
-  constructor(public instrument: Instrument, public score: string) {
+  private score: Score;
+
+  constructor(public instrument: Instrument, score: string) {
+    this.score = new Score(score);
+    this.instrument.reset(this.score.next());
   }
 
   next(): number {
-    return this.instrument.next() * amplitude;
+    var value = this.instrument.next() * amplitude;
+    if (this.instrument.done && !this.score.done) {
+      this.instrument.reset(this.score.next());
+    }
+    return value;
   }
 
-  done(): boolean {
-    return this.instrument.done;
-  }
-
-  static fromFile(instrument: Instrument, filename: string): Part {
-    return new Part(instrument, fs.readFileSync(filename, 'UTF-8'));
+  get done(): boolean {
+    return this.instrument.done && this.score.done;
   }
 }

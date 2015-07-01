@@ -4,7 +4,7 @@ import {sampling} from '../constants';
 export default class TriangleWave implements Wave {
   private time = -1;
 
-  constructor(private frequency: number) {
+  constructor(public frequency: number) {
   }
 
   next() {

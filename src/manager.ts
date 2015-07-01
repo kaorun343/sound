@@ -22,7 +22,7 @@ export default class Manager {
             .reduce((s, n) => s + n) / length
         )
       );
-      this.parts = this.parts.filter(part => !part.done());
+      this.parts = this.parts.filter(part => !part.done);
     }
   }
 }

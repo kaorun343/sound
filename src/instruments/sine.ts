@@ -1,25 +1,33 @@
 /// <reference path="../typings/instrument.d.ts"/>
+/// <reference path="../typings/wave.d.ts"/>
 
 import SineWave from '../waves/sine';
-import {sampling} from '../constants';
+import Note from '../note';
 
 export default class Sine implements Instrument {
 
-  private wave = new SineWave(440);
+  private wave: Wave = new SineWave(440);
   private time = 0;
-  private max: number;
-  public done = false;
   private length = 1;
+  private velocity: number;
 
-  constructor() {
-    this.max = sampling * this.length;
+  set frequency(frequency: number) {
+    this.wave.frequency = frequency;
   }
 
   next() {
-    this.time ++;
-    if (this.time > this.max) {
-      this.done = true;
-    }
-    return this.wave.next();
+    this.time++;
+    return this.wave.next() * this.velocity / 128;
+  }
+
+  get done() {
+    return this.time > this.length;
+  }
+
+  reset(note: Note) {
+    this.time %= 1;
+    this.length = note.length;
+    this.frequency = note.frequency;
+    this.velocity = note.velocity;
   }
 }

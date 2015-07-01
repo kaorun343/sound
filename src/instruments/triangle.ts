@@ -1,24 +1,33 @@
 /// <reference path="../typings/instrument.d.ts"/>
+/// <reference path="../typings/wave.d.ts"/>
 
 import TriangleWave from '../waves/triangle';
-import {sampling} from '../constants';
+import Note from '../note';
 
 export default class Triangle implements Instrument {
 
-  private wave = new TriangleWave(440);
+  private wave: Wave = new TriangleWave(440);
   private time = 0;
-  public done = false;
-  private max: number;
   private length = 1;
+  private velocity: number;
 
-  constructor() {
-    this.max = sampling * this.length;
+  set frequency(frequency: number) {
+    this.wave.frequency = frequency;
   }
+
   next() {
     this.time++;
-    if (this.time > this.max) {
-      this.done = true;
-    }
-    return this.wave.next();
+    return this.wave.next() * this.velocity / 128;
+  }
+
+  get done() {
+    return this.time > this.length;
+  }
+
+  reset(note: Note) {
+    this.time %= 1;
+    this.length = note.length;
+    this.frequency = note.frequency;
+    this.velocity = note.velocity;
   }
 }
