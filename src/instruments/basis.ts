@@ -1,12 +1,10 @@
 /// <reference path="../typings/instrument.d.ts"/>
 /// <reference path="../typings/wave.d.ts"/>
 
-import SawtoothWave from '../waves/sawtooth';
 import Note from '../note';
 
-export default class Sawtooth implements Instrument {
-
-  private wave: Wave = new SawtoothWave(440);
+export default class Basis implements Instrument {
+  protected wave: Wave;
   private time = 0;
   private length = 1;
   private velocity: number;

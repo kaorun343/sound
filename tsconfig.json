@@ -18,6 +18,7 @@
     "files": [
         "./src/constants.ts",
         "./src/index.ts",
+        "./src/instruments/basis.ts",
         "./src/instruments/sawtooth.ts",
         "./src/instruments/sine.ts",
         "./src/instruments/square.ts",
