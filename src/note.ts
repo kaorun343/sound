@@ -1,4 +1,5 @@
-export default class Note {
+"use strict";
+export class Note {
   constructor(
     public pitch: number,
     public length: number,

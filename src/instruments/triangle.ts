@@ -1,7 +1,8 @@
-import TriangleWave from '../waves/triangle';
-import Basis from './basis';
+"use strict";
+import {TriangleWave} from "../waves/triangle";
+import {Basis} from "./basis";
 
-export default class Triangle extends Basis {
+export class Triangle extends Basis {
 
   constructor() {
     super();

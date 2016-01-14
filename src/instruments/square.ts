@@ -1,7 +1,8 @@
-import SquareWave from '../waves/square';
-import Basis from './basis';
+"use strict";
+import {SquareWave} from "../waves/square";
+import {Basis} from "./basis";
 
-export default class Square extends Basis {
+export class Square extends Basis {
 
   constructor() {
     super();

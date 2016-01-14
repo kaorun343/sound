@@ -1,10 +1,8 @@
-/// <reference path="./typings/instrument.d.ts"/>
-/// <reference path="../typings/bundle.d.ts"/>
+"use strict";
+import {Score} from "./score";
+import {amplitude} from "./constants";
 
-import Score from './score';
-import {amplitude} from './constants';
-
-export default class Part {
+export class Part {
   private score: Score;
 
   constructor(public instrument: Instrument, score: string) {

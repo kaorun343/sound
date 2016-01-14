@@ -1,11 +1,14 @@
-import Part from './part';
+"use strict";
+import {Part} from "./part";
 
-export default class Manager {
+export class Manager {
 
   private parts: Part[] = [];
 
   constructor(parts?: Part[]) {
-    if (parts) this.parts = parts;
+    if (parts) {
+      this.parts = parts;
+    }
   }
 
   add(part: Part) {

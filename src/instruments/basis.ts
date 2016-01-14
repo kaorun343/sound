@@ -1,9 +1,6 @@
-/// <reference path="../typings/instrument.d.ts"/>
-/// <reference path="../typings/wave.d.ts"/>
+import {Note} from "../note";
 
-import Note from '../note';
-
-export default class Basis implements Instrument {
+export class Basis implements Instrument {
   protected wave: Wave;
   private time = 0;
   private length = 1;

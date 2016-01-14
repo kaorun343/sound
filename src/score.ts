@@ -1,5 +1,6 @@
-import Note from './note';
-import {sampling} from './constants';
+"use strict";
+import {Note} from "./note";
+import {sampling} from "./constants";
 
 enum Status {
   leng,
@@ -11,7 +12,7 @@ enum Status {
   note_gate
 }
 
-export default class Score {
+export class Score {
 
   private score: Note[] = [];
   private index = -1;
@@ -97,7 +98,7 @@ export default class Score {
         case "7" :
         case "8" :
         case "9" :
-          var n = parseInt(c)
+          var n = parseInt(c);
           switch (s) {
             case Status.leng :
               length = length * 10 + n;

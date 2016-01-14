@@ -1,7 +1,8 @@
-import SineWave from '../waves/sine';
-import Basis from './basis';
+"use strict";
+import {SineWave} from "../waves/sine";
+import {Basis} from "./basis";
 
-export default class Sine extends Basis {
+export class Sine extends Basis {
 
   constructor() {
     super();

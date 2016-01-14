@@ -1,5 +1,5 @@
 {
-    "version": "1.5.0-alpha",
+    "version": "1.7.0",
     "compilerOptions": {
         "target": "es5",
         "module": "commonjs",
@@ -32,8 +32,9 @@
         "./src/waves/sawtooth.ts",
         "./src/waves/sine.ts",
         "./src/waves/square.ts",
-        "./src/waves/triangle.ts",
-        "./typings/bundle.d.ts",
-        "./typings/node/node.d.ts"
-    ]
+        "./src/waves/triangle.ts"
+    ],
+    "atom": {
+        "rewriteTsconfig": true
+    }
 }

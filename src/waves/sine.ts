@@ -1,7 +1,7 @@
-/// <reference path="../typings/wave.d.ts"/>
-import {sampling} from '../constants';
+"use strict";
+import {sampling} from "../constants";
 
-export default class SineWave implements Wave {
+export class SineWave implements Wave {
   private time: number = -1;
 
   constructor(public frequency: number) {
